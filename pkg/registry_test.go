@@ -7,9 +7,9 @@ import (
 	"github.com/aphistic/sweet-junit"
 	. "github.com/onsi/gomega"
 
-	"github.com/roscopecoltran/sniperkit-agent/logger/backends/gomol"
-	// "github.com/roscopecoltran/sniperkit-agent/logger/backends/logrus"
-	// "github.com/roscopecoltran/sniperkit-agent/logger/backends/zap"
+	"github.com/sniperkit/logger/backend/gomol"
+	// 	"github.com/sniperkit/logger/backend/logrus"
+	// 	"github.com/sniperkit/logger/backend/zap"
 )
 
 func TestMain(m *testing.M) {

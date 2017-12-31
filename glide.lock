@@ -1,0 +1,122 @@
+hash: 70aa54a5080d2d2dbb81d9ce2770c48557f85ac891773615aa8f7eb9b905bfe2
+updated: 2017-12-31T18:40:46.752565376+01:00
+imports:
+- name: github.com/alecthomas/log4go
+  version: a9cdec6a8ef5b02d7e1b8dd0782d34c62648f07d
+- name: github.com/aphistic/gomol
+  version: 087dc6fc835f3c82bbbba853b823d53fa69a533f
+- name: github.com/aphistic/gomol-console
+  version: 169ee27e7e506b21f44b4fdbb72260790098d2f1
+- name: github.com/cihub/seelog
+  version: f561c5e57575bb1e0a2167028b7339b3a8d16fb4
+  subpackages:
+  - archive
+  - archive/gzip
+  - archive/tar
+  - archive/zip
+- name: github.com/efritz/glock
+  version: 4df24427c3792ecfa3d28b2f4ac3ecf2f1909912
+- name: github.com/go-akka/configuration
+  version: 755180b9a146a94d76051113e9624bdc8327c499
+  subpackages:
+  - hocon
+- name: github.com/golang/glog
+  version: 23def4e6c14b4da8ac2ed8007337bc5eb5007998
+- name: github.com/mattn/go-colorable
+  version: 5411d3eea5978e6cdc258b30de592b60df6aba96
+- name: github.com/mattn/go-isatty
+  version: 57fdcb988a5c543893cc61bce354a6e24ab70022
+- name: github.com/mgutz/ansi
+  version: 9520e82c474b0a04dd04f8a40959027271bab992
+- name: github.com/op/go-logging
+  version: 970db520ece77730c7e4724c61121037378659d9
+- name: github.com/orcaman/concurrent-map
+  version: d4c23bd0e01134806215ffe65ba3fd22ec6721f7
+- name: github.com/rifflock/lfshook
+  version: 1fdc019a35147ddbb3d25aedf713ad6d1430c144
+- name: github.com/sirupsen/logrus
+  version: d682213848ed68c0a260ca37d6dd5ace8423f5ba
+- name: github.com/sniperkit/logrus_mate
+  version: 49673c4ae09814be613ec908df7f784b07bcd656
+- name: github.com/spaolacci/murmur3
+  version: 9f5d223c60793748f04a9d5b4b4eacddfc1f755d
+- name: github.com/x-cray/logrus-prefixed-formatter
+  version: bb2702d423886830dee131692131d35648c382e2
+- name: go.uber.org/atomic
+  version: 8474b86a5a6f79c443ce4b2992817ff32cf208b8
+- name: go.uber.org/multierr
+  version: 3c4937480c32f4c13a875a1829af76c98ca3d40a
+- name: go.uber.org/zap
+  version: f85c78b1dd998214c5f2138155b320a4a43fbe36
+  subpackages:
+  - buffer
+  - internal/bufferpool
+  - internal/color
+  - internal/exit
+  - zapcore
+- name: golang.org/x/crypto
+  version: 95a4943f35d008beabde8c11e5075a1b714e6419
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/sys
+  version: e24f485414aeafb646f6fca458b0bf869c0880a1
+  subpackages:
+  - unix
+  - windows
+testImports:
+- name: github.com/aphistic/sweet
+  version: 77e496d75ab4e74244a721ee866641b8c6f49d82
+- name: github.com/aphistic/sweet-junit
+  version: 6b78f7014f7c2ccdd201f977ab307ada6a1e6cb8
+- name: github.com/davecgh/go-spew
+  version: ecdeabc65495df2dec95d7c4a4c3e021903035e5
+  subpackages:
+  - spew
+- name: github.com/onsi/gomega
+  version: ba3724c94e4dd5d5690d37c190f1c54b2c1b4e64
+  subpackages:
+  - format
+  - internal/assertion
+  - internal/asyncassertion
+  - internal/oraclematcher
+  - internal/testingtsupport
+  - matchers
+  - matchers/support/goraph/bipartitegraph
+  - matchers/support/goraph/edge
+  - matchers/support/goraph/node
+  - matchers/support/goraph/util
+  - types
+- name: github.com/pmezard/go-difflib
+  version: 792786c7400a136282c1664665ae0a8db921c6c2
+  subpackages:
+  - difflib
+- name: github.com/stretchr/testify
+  version: 87b1dfb5b2fa649f52695dd9eae19abe404a4308
+  subpackages:
+  - assert
+- name: golang.org/x/net
+  version: e45385e9b226f570b1f086bf287b25d3d4117776
+  subpackages:
+  - html
+  - html/atom
+  - html/charset
+- name: golang.org/x/text
+  version: e19ae1496984b1c655b8044a65c0300a3c878dd3
+  subpackages:
+  - encoding
+  - encoding/charmap
+  - encoding/htmlindex
+  - encoding/internal
+  - encoding/internal/identifier
+  - encoding/japanese
+  - encoding/korean
+  - encoding/simplifiedchinese
+  - encoding/traditionalchinese
+  - encoding/unicode
+  - internal/tag
+  - internal/utf8internal
+  - language
+  - runes
+  - transform
+- name: gopkg.in/yaml.v2
+  version: 287cf08546ab5e7e37d55a84f7ed3fd1db036de5

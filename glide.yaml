@@ -1,0 +1,22 @@
+package: github.com/sniperkit/logger
+import:
+- package: github.com/alecthomas/log4go
+- package: github.com/aphistic/gomol
+- package: github.com/aphistic/gomol-console
+- package: github.com/cihub/seelog
+- package: github.com/golang/glog
+- package: github.com/op/go-logging
+- package: github.com/rifflock/lfshook
+- package: github.com/sirupsen/logrus
+- package: github.com/sniperkit/logrus_mate
+- package: github.com/x-cray/logrus-prefixed-formatter
+- package: go.uber.org/zap
+  subpackages:
+  - zapcore
+testImport:
+- package: github.com/aphistic/sweet
+- package: github.com/aphistic/sweet-junit
+- package: github.com/onsi/gomega
+- package: github.com/stretchr/testify
+  subpackages:
+  - assert
