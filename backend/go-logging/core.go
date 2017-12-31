@@ -2,8 +2,12 @@ package gologging
 
 import (
 	"github.com/op/go-logging"
-	"github.com/sniperkit/logger/pkg"
+
+	lc "github.com/sniperkit/logger/pkg/config"
+	lf "github.com/sniperkit/logger/pkg/fields"
 )
+
+const LoggerBackend = "go-logging"
 
 // To finish
 type Logger struct {
@@ -11,7 +15,11 @@ type Logger struct {
 	disableCaller bool
 }
 
-func New(c *logger.Config) (*Logger, error) {
+func New(c *lc.Config) (*Logger, error) {
+
+	if c.Backend == "" {
+		c.Backend = LoggerBackend
+	}
 
 	level, err := logrus.ParseLevel(c.Level)
 	if err != nil {
@@ -36,7 +44,11 @@ func New(c *logger.Config) (*Logger, error) {
 	return factory.WithFields(c.InitialFields), nil
 }
 
-func (l *Logger) WithFields(fields logger.Fields) *Logger {
+func (Logger) Name() string {
+	return LoggerBackend
+}
+
+func (l *Logger) WithFields(fields lf.Fields) *Logger {
 	if len(fields) == 0 {
 		return l
 	}

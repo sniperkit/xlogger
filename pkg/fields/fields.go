@@ -1,7 +1,9 @@
-package logger
+package fields
 
 import (
 	"time"
+
+	"github.com/sniperkit/logger/pkg/core"
 )
 
 //Fields is a struct to send paramaters to log messages
@@ -11,7 +13,7 @@ func (f Fields) NormalizeTimeValues() Fields {
 	for key, val := range f {
 		switch v := val.(type) {
 		case time.Time:
-			f[key] = v.Format(JSONTimeFormat)
+			f[key] = v.Format(core.JSONTimeFormat)
 		default:
 			f[key] = v
 		}

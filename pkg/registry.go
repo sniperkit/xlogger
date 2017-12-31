@@ -4,15 +4,12 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
+
+	lcf "github.com/sniperkit/logger/pkg/config"
 )
 
 // Initialize creates a Logger Store object, initializing the logger
-type Initialize func(addrs []string, options *Config) (Logger, error)
-
-var (
-	logx    Logger
-	loggers = make(map[string]Logger)
-)
+type Initialize func(addrs []string, options *lcf.Config) (Logger, error)
 
 type Backend struct {
 	Logger Logger

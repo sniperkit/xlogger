@@ -3,17 +3,26 @@ package zap
 import (
 	"time"
 
-	"github.com/sniperkit/logger/pkg"
-
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+
+	lcf "github.com/sniperkit/logger/pkg/config"
+	lco "github.com/sniperkit/logger/pkg/core"
+	lfi "github.com/sniperkit/logger/pkg/fields"
 )
+
+const LoggerBackend = "zap"
 
 type Logger struct {
 	logger *zap.SugaredLogger
 }
 
-func New(c *logger.Config) (*Logger, error) {
+func New(c *lcf.Config) (*Logger, error) {
+
+	if c.Backend == "" {
+		c.Backend = LoggerBackend
+	}
+
 	var (
 		level        zap.AtomicLevel
 		levelEncoder zapcore.LevelEncoder
@@ -68,7 +77,11 @@ func New(c *logger.Config) (*Logger, error) {
 	return backend, nil
 }
 
-func (l *Logger) WithFields(fields logger.Fields) *Logger {
+func (Logger) Name() string {
+	return LoggerBackend
+}
+
+func (l *Logger) WithFields(fields lfi.Fields) *Logger {
 	if len(fields) == 0 {
 		return l
 	}
@@ -98,23 +111,23 @@ func (l *Logger) Fatal(format string, args ...interface{}) {
 	l.logger.Fatalf(format, args...)
 }
 
-func (l *Logger) DebugWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) DebugWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.getLogger(fields).Debugf(format, args...)
 }
 
-func (l *Logger) InfoWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) InfoWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.getLogger(fields).Infof(format, args...)
 }
 
-func (l *Logger) WarningWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) WarningWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.getLogger(fields).Warnf(format, args...)
 }
 
-func (l *Logger) ErrorWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) ErrorWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.getLogger(fields).Errorf(format, args...)
 }
 
-func (l *Logger) FatalWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) FatalWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.getLogger(fields).Fatalf(format, args...)
 }
 
@@ -122,14 +135,14 @@ func (l *Logger) Sync() error {
 	return l.logger.Sync()
 }
 
-func (l *Logger) getLogger(fields logger.Fields) *zap.SugaredLogger {
+func (l *Logger) getLogger(fields lfi.Fields) *zap.SugaredLogger {
 	if len(fields) == 0 {
 		return l.logger
 	}
 	return l.logger.With(flatten(fields)...)
 }
 
-func flatten(fields logger.Fields) []interface{} {
+func flatten(fields lfi.Fields) []interface{} {
 	flattened := []interface{}{}
 	for key, value := range fields {
 		flattened = append(flattened, key)
@@ -139,9 +152,9 @@ func flatten(fields logger.Fields) []interface{} {
 }
 
 func zapConsoleTimeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
-	enc.AppendString(t.Format(logger.ConsoleTimeFormat))
+	enc.AppendString(t.Format(lco.ConsoleTimeFormat))
 }
 
 func zapJSONTimeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
-	enc.AppendString(t.Format(logger.JSONTimeFormat))
+	enc.AppendString(t.Format(lco.JSONTimeFormat))
 }

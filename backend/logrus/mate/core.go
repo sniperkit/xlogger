@@ -1,12 +1,15 @@
 package logrus_mate
 
 import (
-	"github.com/sniperkit/logger/pkg"
-	"github.com/sniperkit/logrus_mate"
-
 	"github.com/sirupsen/logrus"
+	"github.com/sniperkit/logrus_mate"
 	prefixed "github.com/x-cray/logrus-prefixed-formatter"
+
+	lc "github.com/sniperkit/logger/pkg/config"
+	lf "github.com/sniperkit/logger/pkg/fields"
 )
+
+const LoggerBackend = "logrus-mate"
 
 type Logger struct {
 	entry         *logrus.Entry
@@ -14,7 +17,12 @@ type Logger struct {
 	isFiltered    bool
 }
 
-func New(c *logger.Config) (*Logger, error) {
+func New(c *lc.Config) (*Logger, error) {
+
+	if c.Backend == "" {
+		c.Backend = LoggerBackend
+	}
+
 	level, err := logrus.ParseLevel(c.Level)
 	if err != nil {
 		return nil, err
@@ -64,7 +72,11 @@ func New(c *logger.Config) (*Logger, error) {
 	return factory.WithFields(c.InitialFields), nil
 }
 
-func (l *Logger) WithFields(fields logger.Fields) *Logger {
+func (Logger) Name() string {
+	return LoggerBackend
+}
+
+func (l *Logger) WithFields(fields lf.Fields) *Logger {
 	if len(fields) == 0 {
 		return l
 	}

@@ -6,8 +6,12 @@ import (
 	"github.com/aphistic/gomol"
 	console "github.com/aphistic/gomol-console"
 
-	"github.com/sniperkit/logger/pkg"
+	log "github.com/sniperkit/logger/pkg"
+	lcf "github.com/sniperkit/logger/pkg/config"
+	lfi "github.com/sniperkit/logger/pkg/fields"
 )
+
+const LoggerBackend = "gomol"
 
 type Logger struct {
 	logger        gomol.WrappableLogger
@@ -21,7 +25,12 @@ func Register() {
 }
 */
 
-func New(c *logger.Config) (*Logger, error) { // (*logger.Logger, error) {
+func New(c *lcf.Config) (*Logger, error) { // (*logger.Logger, error) {
+
+	if c.Backend == "" {
+		c.Backend = LoggerBackend
+	}
+
 	level, _ := gomol.ToLogLevel(c.Level)
 	gomol.SetLogLevel(level)
 
@@ -67,7 +76,11 @@ func New(c *logger.Config) (*Logger, error) { // (*logger.Logger, error) {
 	return factory.WithFields(c.InitialFields), nil
 }
 
-func (l *Logger) WithFields(fields logger.Fields) *Logger { // *logger.Logger {
+func (Logger) Name() string {
+	return LoggerBackend
+}
+
+func (l *Logger) WithFields(fields lfi.Fields) *Logger { // *logx.Logger {
 	if len(fields) == 0 {
 		return l
 	}
@@ -99,23 +112,23 @@ func (l *Logger) Fatal(format string, args ...interface{}) {
 	os.Exit(1)
 }
 
-func (l *Logger) DebugWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) DebugWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.log(gomol.LevelDebug, fields, format, args...)
 }
 
-func (l *Logger) InfoWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) InfoWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.log(gomol.LevelInfo, fields, format, args...)
 }
 
-func (l *Logger) WarningWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) WarningWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.log(gomol.LevelWarning, fields, format, args...)
 }
 
-func (l *Logger) ErrorWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) ErrorWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.log(gomol.LevelError, fields, format, args...)
 }
 
-func (l *Logger) FatalWithFields(fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) FatalWithFields(fields lfi.Fields, format string, args ...interface{}) {
 	l.log(gomol.LevelFatal, fields, format, args...)
 	l.logger.ShutdownLoggers()
 	os.Exit(1)
@@ -125,12 +138,12 @@ func (l *Logger) Sync() error {
 	return gomol.ShutdownLoggers()
 }
 
-func (l *Logger) log(level gomol.LogLevel, fields logger.Fields, format string, args ...interface{}) {
+func (l *Logger) log(level gomol.LogLevel, fields lfi.Fields, format string, args ...interface{}) {
 	if fields == nil {
 		fields = map[string]interface{}{}
 	}
 	if !l.disableCaller {
-		fields["caller"] = logger.GetCaller()
+		fields["caller"] = log.GetCaller()
 	}
 	l.logger.Log(level, gomol.NewAttrsFromMap(fields.NormalizeTimeValues()), format, args...)
 }

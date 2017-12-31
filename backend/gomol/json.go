@@ -8,7 +8,8 @@ import (
 	"time"
 
 	"github.com/aphistic/gomol"
-	"github.com/sniperkit/logger/pkg"
+
+	lco "github.com/sniperkit/logger/pkg/core"
 )
 
 type jsonLogger struct {
@@ -52,7 +53,7 @@ func (l *jsonLogger) Logm(timestamp time.Time, level gomol.LogLevel, attrs map[s
 		mergedAttrs[key] = val
 	}
 	mergedAttrs["message"] = msg
-	mergedAttrs["timestamp"] = timestamp.Format(logger.JSONTimeFormat)
+	mergedAttrs["timestamp"] = timestamp.Format(lco.JSONTimeFormat)
 	mergedAttrs["level"] = level.String()
 	out, err := json.Marshal(mergedAttrs)
 	if err != nil {
