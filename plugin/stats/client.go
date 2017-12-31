@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	DefaultStatsEngine = "influxdb"
+	DefaultEngineClient = "influxdb"
 )
 
 var (
@@ -15,7 +15,8 @@ var (
 )
 
 func init() {
-	switch DefaultStatsEngine {
+
+	switch DefaultEngineClient {
 	case "influxdb":
 		LOGX_STATS_CLIENT_INFLUXDB = influxdb.NewClient("localhost:8125")
 		stats.Register(LOGX_STATS_CLIENT_INFLUXDB)
