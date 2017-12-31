@@ -5,8 +5,8 @@ import (
 	"github.com/sniperkit/logrus_mate"
 	prefixed "github.com/x-cray/logrus-prefixed-formatter"
 
-	lc "github.com/sniperkit/logger/pkg/config"
-	lf "github.com/sniperkit/logger/pkg/fields"
+	lc "github.com/sniperkit/xlogger/pkg/config"
+	lf "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 const LoggerBackend = "logrus-mate"

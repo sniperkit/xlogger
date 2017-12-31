@@ -3,8 +3,8 @@ package gologging
 import (
 	"github.com/op/go-logging"
 
-	lc "github.com/sniperkit/logger/pkg/config"
-	lf "github.com/sniperkit/logger/pkg/fields"
+	lc "github.com/sniperkit/xlogger/pkg/config"
+	lf "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 const LoggerBackend = "go-logging"

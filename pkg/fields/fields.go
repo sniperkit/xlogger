@@ -3,7 +3,7 @@ package fields
 import (
 	"time"
 
-	"github.com/sniperkit/logger/pkg/core"
+	"github.com/sniperkit/xlogger/pkg/core"
 )
 
 //Fields is a struct to send paramaters to log messages

@@ -6,9 +6,9 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	lcf "github.com/sniperkit/logger/pkg/config"
-	lco "github.com/sniperkit/logger/pkg/core"
-	lfi "github.com/sniperkit/logger/pkg/fields"
+	lcf "github.com/sniperkit/xlogger/pkg/config"
+	lco "github.com/sniperkit/xlogger/pkg/core"
+	lfi "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 const LoggerBackend = "zap"

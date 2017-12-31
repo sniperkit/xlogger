@@ -1,8 +1,8 @@
 package logger
 
 import (
-	log "github.com/sniperkit/logger/backend/default"
-	lc "github.com/sniperkit/logger/pkg/config"
+	log "github.com/sniperkit/xlogger/backend/default"
+	lc "github.com/sniperkit/xlogger/pkg/config"
 )
 
 var (

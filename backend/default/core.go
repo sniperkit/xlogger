@@ -4,8 +4,8 @@ import (
 	"errors"
 	"log"
 
-	lcf "github.com/sniperkit/logger/pkg/config"
-	lfi "github.com/sniperkit/logger/pkg/fields"
+	lcf "github.com/sniperkit/xlogger/pkg/config"
+	lfi "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 const (

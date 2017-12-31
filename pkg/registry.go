@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	lcf "github.com/sniperkit/logger/pkg/config"
+	lcf "github.com/sniperkit/xlogger/pkg/config"
 )
 
 // Initialize creates a Logger Store object, initializing the logger

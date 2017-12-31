@@ -3,8 +3,8 @@ package glog
 import (
 	"github.com/golang/glog"
 
-	lc "github.com/sniperkit/logger/pkg/config"
-	lf "github.com/sniperkit/logger/pkg/fields"
+	lc "github.com/sniperkit/xlogger/pkg/config"
+	lf "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 const LoggerBackend = "glog"

@@ -3,8 +3,8 @@ package log4go
 import (
 	"github.com/alecthomas/log4go"
 
-	lc "github.com/sniperkit/logger/pkg/config"
-	lf "github.com/sniperkit/logger/pkg/fields"
+	lc "github.com/sniperkit/xlogger/pkg/config"
+	lf "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 const LoggerBackend = "log4go"

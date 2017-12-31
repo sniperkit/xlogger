@@ -7,14 +7,14 @@ import (
 
 	"github.com/sirupsen/logrus"
 	prefixed "github.com/x-cray/logrus-prefixed-formatter"
-	// "github.com/sniperkit/logger/backends/logrus/filtered"
+	// "github.com/sniperkit/xlogger/backends/logrus/filtered"
 	// "github.com/sniperkit/logrus_mate"
 	// _ "github.com/sniperkit/logrus_mate/hooks/file"
 
-	lp "github.com/sniperkit/logger/pkg"
-	lcf "github.com/sniperkit/logger/pkg/config"
-	lco "github.com/sniperkit/logger/pkg/core"
-	lfi "github.com/sniperkit/logger/pkg/fields"
+	lp "github.com/sniperkit/xlogger/pkg"
+	lcf "github.com/sniperkit/xlogger/pkg/config"
+	lco "github.com/sniperkit/xlogger/pkg/core"
+	lfi "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 const LoggerBackend = "logrus"

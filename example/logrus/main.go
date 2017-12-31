@@ -4,11 +4,11 @@ import (
 	"os"
 	"time"
 
-	logger "github.com/sniperkit/logger/pkg"
-	logger_cfg "github.com/sniperkit/logger/pkg/config"
-	logger_fields "github.com/sniperkit/logger/pkg/fields"
+	logger "github.com/sniperkit/xlogger/pkg"
+	logger_cfg "github.com/sniperkit/xlogger/pkg/config"
+	logger_fields "github.com/sniperkit/xlogger/pkg/fields"
 
-	"github.com/sniperkit/logger/backend/logrus"
+	"github.com/sniperkit/xlogger/backend/logrus"
 )
 
 const (

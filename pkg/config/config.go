@@ -3,8 +3,8 @@ package config
 import (
 	"strings"
 
-	lc "github.com/sniperkit/logger/pkg/core"
-	lf "github.com/sniperkit/logger/pkg/fields"
+	lc "github.com/sniperkit/xlogger/pkg/core"
+	lf "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 type Config struct {

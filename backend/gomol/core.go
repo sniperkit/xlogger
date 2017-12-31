@@ -6,9 +6,9 @@ import (
 	"github.com/aphistic/gomol"
 	console "github.com/aphistic/gomol-console"
 
-	log "github.com/sniperkit/logger/pkg"
-	lcf "github.com/sniperkit/logger/pkg/config"
-	lfi "github.com/sniperkit/logger/pkg/fields"
+	log "github.com/sniperkit/xlogger/pkg"
+	lcf "github.com/sniperkit/xlogger/pkg/config"
+	lfi "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 const LoggerBackend = "gomol"

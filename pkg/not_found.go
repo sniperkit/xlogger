@@ -1,7 +1,7 @@
 package logger
 
 import (
-	lf "github.com/sniperkit/logger/pkg/fields"
+	lf "github.com/sniperkit/xlogger/pkg/fields"
 )
 
 type NotFound struct{}

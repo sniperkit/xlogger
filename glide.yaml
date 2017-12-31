@@ -1,4 +1,4 @@
-package: github.com/sniperkit/logger
+package: github.com/sniperkit/xlogger
 import:
 - package: github.com/alecthomas/log4go
 - package: github.com/aphistic/gomol

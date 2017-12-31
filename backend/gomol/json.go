@@ -9,7 +9,7 @@ import (
 
 	"github.com/aphistic/gomol"
 
-	lco "github.com/sniperkit/logger/pkg/core"
+	lco "github.com/sniperkit/xlogger/pkg/core"
 )
 
 type jsonLogger struct {
