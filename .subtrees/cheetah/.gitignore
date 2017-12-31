@@ -1,5 +1,0 @@
-logger*coverage*
-vendor/*/
-*.pprof
-*.log
-/cheetah
