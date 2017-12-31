@@ -1,10 +1,8 @@
 package seelog
 
 import (
-	// "time"
-
 	"github.com/cihub/seelog"
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 )
 
 // To finish

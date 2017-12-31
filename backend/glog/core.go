@@ -1,10 +1,8 @@
 package glog
 
 import (
-	// "time"
-
 	"github.com/golang/glog"
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 )
 
 // To finish

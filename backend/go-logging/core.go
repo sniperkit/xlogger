@@ -1,10 +1,8 @@
 package gologging
 
 import (
-	// "time"
-
 	"github.com/op/go-logging"
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 )
 
 // To finish

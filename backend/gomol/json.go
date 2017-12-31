@@ -8,8 +8,7 @@ import (
 	"time"
 
 	"github.com/aphistic/gomol"
-
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 )
 
 type jsonLogger struct {

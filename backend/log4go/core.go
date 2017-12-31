@@ -1,10 +1,8 @@
 package log4go
 
 import (
-	// "time"
-
 	"github.com/alecthomas/log4go"
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 )
 
 // To finish

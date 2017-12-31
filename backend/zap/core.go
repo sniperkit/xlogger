@@ -3,7 +3,7 @@ package zap
 import (
 	"time"
 
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

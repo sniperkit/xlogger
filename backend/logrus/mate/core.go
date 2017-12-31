@@ -1,7 +1,7 @@
 package logrus_mate
 
 import (
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 	"github.com/sniperkit/logrus_mate"
 
 	"github.com/sirupsen/logrus"

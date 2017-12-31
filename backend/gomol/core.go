@@ -6,7 +6,7 @@ import (
 	"github.com/aphistic/gomol"
 	console "github.com/aphistic/gomol-console"
 
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 )
 
 type Logger struct {

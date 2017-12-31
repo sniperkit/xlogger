@@ -1,1 +1,1 @@
-package log5go
+package log4go

@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/rifflock/lfshook"
-	"github.com/sniperkit/logger"
+	"github.com/sniperkit/logger/pkg"
 	// "github.com/sniperkit/logger/backends/logrus/filtered"
 	// "github.com/sniperkit/logrus_mate"
 	// _ "github.com/sniperkit/logrus_mate/hooks/file"
