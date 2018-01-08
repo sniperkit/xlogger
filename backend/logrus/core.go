@@ -134,46 +134,6 @@ func (l *Logger) WithFields(fields lfi.Fields) *Logger {
 	}
 }
 
-func (l *Logger) Debug(format string, args ...interface{}) {
-	l.decorateEntry(nil).Debugf(format, args...)
-}
-
-func (l *Logger) Info(format string, args ...interface{}) {
-	l.decorateEntry(nil).Infof(format, args...)
-}
-
-func (l *Logger) Warning(format string, args ...interface{}) {
-	l.decorateEntry(nil).Warningf(format, args...)
-}
-
-func (l *Logger) Error(format string, args ...interface{}) {
-	l.decorateEntry(nil).Errorf(format, args...)
-}
-
-func (l *Logger) Fatal(format string, args ...interface{}) {
-	l.decorateEntry(nil).Fatalf(format, args...)
-}
-
-func (l *Logger) DebugWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.decorateEntry(fields).Debugf(format, args...)
-}
-
-func (l *Logger) InfoWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.decorateEntry(fields).Infof(format, args...)
-}
-
-func (l *Logger) WarningWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.decorateEntry(fields).Warningf(format, args...)
-}
-
-func (l *Logger) ErrorWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.decorateEntry(fields).Errorf(format, args...)
-}
-
-func (l *Logger) FatalWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.decorateEntry(fields).Fatalf(format, args...)
-}
-
 func (l *Logger) Sync() error {
 	return nil
 }

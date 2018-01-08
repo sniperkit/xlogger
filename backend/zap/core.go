@@ -91,46 +91,6 @@ func (l *Logger) WithFields(fields lfi.Fields) *Logger {
 	return backend
 }
 
-func (l *Logger) Debug(format string, args ...interface{}) {
-	l.logger.Debugf(format, args...)
-}
-
-func (l *Logger) Info(format string, args ...interface{}) {
-	l.logger.Infof(format, args...)
-}
-
-func (l *Logger) Warning(format string, args ...interface{}) {
-	l.logger.Warnf(format, args...)
-}
-
-func (l *Logger) Error(format string, args ...interface{}) {
-	l.logger.Errorf(format, args...)
-}
-
-func (l *Logger) Fatal(format string, args ...interface{}) {
-	l.logger.Fatalf(format, args...)
-}
-
-func (l *Logger) DebugWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.getLogger(fields).Debugf(format, args...)
-}
-
-func (l *Logger) InfoWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.getLogger(fields).Infof(format, args...)
-}
-
-func (l *Logger) WarningWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.getLogger(fields).Warnf(format, args...)
-}
-
-func (l *Logger) ErrorWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.getLogger(fields).Errorf(format, args...)
-}
-
-func (l *Logger) FatalWithFields(fields lfi.Fields, format string, args ...interface{}) {
-	l.getLogger(fields).Fatalf(format, args...)
-}
-
 func (l *Logger) Sync() error {
 	return l.logger.Sync()
 }
